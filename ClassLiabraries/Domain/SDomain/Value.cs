@@ -6,7 +6,6 @@ namespace SDomain
     {
         public int ID { get; set; }
         public String Name { get; set; }
-        public string email { get; set; }
-
+    
     }
 }
