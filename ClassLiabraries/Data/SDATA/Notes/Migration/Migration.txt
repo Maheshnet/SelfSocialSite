@@ -1,0 +1,60 @@
+﻿1. Make sure you install the following from nuget
+	1. Entityframworkcore.tool
+	2. Entityframworkcore
+	3. Entityframworkcore.Sqlserver
+	4. Entityframworkcore.design
+
+2. Then go to terminal window and direct to API Project and run the below Command
+
+"dotnet tool install --global dotnet-ef"
+
+3. After
+
+"dotnet ef"
+
+4. Now direct to Solution".sln" directory and run the following command.
+
+	" dotnet ef migrations add [migrationName(Ex: ValuesMigration)] -p [dbcontextproject directory(ex: D:\Users\mahes\source\repos\react\CoreAppReact\SelfSocialSite\ClassLiabraries\Data\SDATA\)] -s[API project directory(D:\Users\mahes\source\repos\react\CoreAppReact\SelfSocialSite\API\SocialSite\SocialSite\) ] "
+
+					or 
+
+	"    dotnet ef migrations add ValuesMigration -p SDATA/ -s SocialSite/    "
+
+5. Update-database  or 
+
+
+    in program.cs alter the following line
+
+" CreateHostBuilder(args).Build().Run(); "
+
+
+                    to
+
+
+ var host = CreateHostBuilder(args).Build();
+            //
+
+ using (var scope = host.Services.CreateScope())
+            {
+                var services = scope.ServiceProvider ;
+                try
+                {
+                    var context = services.GetRequiredService<DataContext>();
+                    context.Database.Migrate();
+
+                }
+                catch (Exception ex)
+                {
+                    var Logger = services.GetRequiredService<ILogger<Program>>();
+                    Logger.LogError(ex, "An error occured during Migration");
+                }
+
+            }
+            host.Run();
+
+
+
+6. For seeding the data into respective table
+        "  dotnet ef migrations add SeedValues -p SDATA/ -s SocialSite/    "
+         
+         at solution level
