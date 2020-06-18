@@ -10,7 +10,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using SDATA;
 
-namespace WebApplication1
+namespace SocialSite
 {
     public class Program
     {
@@ -41,8 +41,10 @@ namespace WebApplication1
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
+                    // Add the following line:
+                    webBuilder.UseSentry("https://ad4d74fd87084314aea4cca7262c01fc@o407788.ingest.sentry.io/5278731");
                     //webBuilder.UseSetting("https_port", "44303");
-                    webBuilder.UseStartup<Startup>();
+                    webBuilder.UseStartup<Startup>();                   
                 });
     }
 }

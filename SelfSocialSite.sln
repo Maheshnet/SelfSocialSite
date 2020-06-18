@@ -17,9 +17,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SocialSite", "SocialSite", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SocialSite", "API\SocialSite\SocialSite\SocialSite.csproj", "{4EE48FCF-EBAA-4FC3-9EB4-E0A8EF0CD1AE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SDomain", "ClassLiabraries\Domain\SDomain\SDomain.csproj", "{CC368D7A-0975-46F1-B5FC-6A4FA1763B5E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SDomain", "ClassLiabraries\Domain\SDomain\SDomain.csproj", "{CC368D7A-0975-46F1-B5FC-6A4FA1763B5E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SDATA", "ClassLiabraries\Data\SDATA\SDATA.csproj", "{B8C108C0-A2FA-48DF-B0C2-6CDEF463F8A8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SDATA", "ClassLiabraries\Data\SDATA\SDATA.csproj", "{B8C108C0-A2FA-48DF-B0C2-6CDEF463F8A8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client-App", "Client-App", "{4A94D29F-4E54-4267-BD9A-D286A6AC609E}"
+	ProjectSection(SolutionItems) = preProject
+		Notes.txt = Notes.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{841689BB-4F54-4D5D-814B-3E62DBACBA7A}"
+	ProjectSection(SolutionItems) = preProject
+		Notes.txt = Notes.txt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

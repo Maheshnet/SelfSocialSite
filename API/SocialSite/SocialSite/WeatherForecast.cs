@@ -1,6 +1,6 @@
 using System;
 
-namespace WebApplication1
+namespace SocialSite
 {
     public class WeatherForecast
     {

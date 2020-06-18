@@ -1,16 +1,17 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SDomain;
-using System;
 
 namespace SDATA
 {
     public class DataContext : DbContext
     {
-        public DataContext(DbContextOptions options) : base(options)
+        public DbSet<Value> Values { get; set; }
+        public DataContext(DbContextOptions<DataContext> options) : base(options)
         {
 
         }
-        public DbSet<Value> Values { get; set; }
+
+       
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.Entity<Value>()

@@ -23,10 +23,12 @@ namespace SocialSite.Controllers
         }
 
         // GET: api/<ValuesController>
+
+
         [HttpGet]
-        public async Task<ActionResult< IEnumerable<Value>>> Get()
+        public async Task<ActionResult<IEnumerable<Value>>> Get()
         {
-            var Values = await _context.Values.ToListAsync() ;
+            var Values = await _context.Values.ToListAsync();
             return Ok(Values);
         }
 

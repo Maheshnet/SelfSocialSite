@@ -13,7 +13,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using SDATA;
 
-namespace WebApplication1
+namespace SocialSite
 {
     public class Startup
     {
@@ -27,9 +27,10 @@ namespace WebApplication1
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<DataContext>(opt=>
+            services.AddDbContext<DataContext>(opt =>
             {
-                opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
+               //opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
+                opt.UseSqlite("Data Source=SActivities.db");
             });
             services.AddControllers();
         }

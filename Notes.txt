@@ -1,0 +1,29 @@
+CONFIGURE ASP.NET CORE
+
+This is a quick getting started guide. For in-depth instructions on integrating Sentry with ASP.NET Core, view our complete documentation.
+Install the NuGet package:
+
+Package Manager:
+
+Install-Package Sentry.AspNetCore -Version 2.1.3
+.NET Core CLI:
+
+dotnet add package Sentry.AspNetCore -v 2.1.3
+Add Sentry to Program.cs through the WebHostBuilder:
+
+ASP.NET Core 2.x:
+
+public static IWebHost BuildWebHost(string[] args) =>
+    WebHost.CreateDefaultBuilder(args)
+        // Add the following line:
+        .UseSentry("https://ad4d74fd87084314aea4cca7262c01fc@o407788.ingest.sentry.io/5278731");
+ASP.NET Core 3.0:
+
+public static IHostBuilder CreateHostBuilder(string[] args) =>
+    Host.CreateDefaultBuilder(args)
+        .ConfigureWebHostDefaults(webBuilder =>
+        {
+            // Add the following line:
+            webBuilder.UseSentry("https://ad4d74fd87084314aea4cca7262c01fc@o407788.ingest.sentry.io/5278731");
+        });
+See the provided examples in the dotnet SDK repository for examples to send your first event to Sentry.
