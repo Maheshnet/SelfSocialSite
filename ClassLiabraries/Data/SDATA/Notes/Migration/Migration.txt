@@ -3,6 +3,8 @@
 	2. Entityframworkcore
 	3. Entityframworkcore.Sqlserver
 	4. Entityframworkcore.design
+    5. Entityframworkcore.sqlite
+    6. Entityframworkcore.Sqlite.Core.
 
 2. Then go to terminal window and direct to API Project and run the below Command
 
