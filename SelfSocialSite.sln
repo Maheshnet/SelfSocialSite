@@ -24,11 +24,54 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client-App", "Client-App", "{4A94D29F-4E54-4267-BD9A-D286A6AC609E}"
 	ProjectSection(SolutionItems) = preProject
 		Notes.txt = Notes.txt
+		Client-App\socialsite\package-lock.json = Client-App\socialsite\package-lock.json
+		Client-App\socialsite\package.json = Client-App\socialsite\package.json
+		Client-App\socialsite\tsconfig.json = Client-App\socialsite\tsconfig.json
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{841689BB-4F54-4D5D-814B-3E62DBACBA7A}"
 	ProjectSection(SolutionItems) = preProject
 		Notes.txt = Notes.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "public", "public", "{0B45AB17-01EB-4124-9E24-4C2B05BE5EB3}"
+	ProjectSection(SolutionItems) = preProject
+		Client-App\socialsite\public\favicon.ico = Client-App\socialsite\public\favicon.ico
+		Client-App\socialsite\public\index.html = Client-App\socialsite\public\index.html
+		Client-App\socialsite\public\logo192.png = Client-App\socialsite\public\logo192.png
+		Client-App\socialsite\public\logo512.png = Client-App\socialsite\public\logo512.png
+		Client-App\socialsite\public\manifest.json = Client-App\socialsite\public\manifest.json
+		Client-App\socialsite\public\robots.txt = Client-App\socialsite\public\robots.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{71E88DCC-8833-4952-8BF9-511B632AB49A}"
+	ProjectSection(SolutionItems) = preProject
+		Client-App\socialsite\src\App.css = Client-App\socialsite\src\App.css
+		Client-App\socialsite\src\App.test.tsx = Client-App\socialsite\src\App.test.tsx
+		Client-App\socialsite\src\App.tsx = Client-App\socialsite\src\App.tsx
+		Client-App\socialsite\src\index.css = Client-App\socialsite\src\index.css
+		Client-App\socialsite\src\index.tsx = Client-App\socialsite\src\index.tsx
+		Client-App\socialsite\src\logo.svg = Client-App\socialsite\src\logo.svg
+		Client-App\socialsite\src\react-app-env.d.ts = Client-App\socialsite\src\react-app-env.d.ts
+		Client-App\socialsite\src\serviceWorker.ts = Client-App\socialsite\src\serviceWorker.ts
+		Client-App\socialsite\src\setupTests.ts = Client-App\socialsite\src\setupTests.ts
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Components", "Components", "{59B7AB0A-EE93-4F2D-9187-D852418DF015}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lib", "lib", "{196EE956-0380-45BB-80B2-90F869B4FFAB}"
+	ProjectSection(SolutionItems) = preProject
+		Client-App\socialsite\src\lib\errorLib.tsx = Client-App\socialsite\src\lib\errorLib.tsx
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ErrorBoundaries", "ErrorBoundaries", "{3756775B-C32E-42B3-9EC7-17511D6E7B89}"
+	ProjectSection(SolutionItems) = preProject
+		Client-App\socialsite\src\Components\ErrorBoundaries\ErrorBoundary.ts = Client-App\socialsite\src\Components\ErrorBoundaries\ErrorBoundary.ts
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ErrorPages", "ErrorPages", "{20D1A197-790A-447B-BE03-46989AE028BB}"
+	ProjectSection(SolutionItems) = preProject
+		Client-App\socialsite\src\Components\ErrorPages\TestErrorPage.tsx = Client-App\socialsite\src\Components\ErrorPages\TestErrorPage.tsx
 	EndProjectSection
 EndProject
 Global
@@ -61,6 +104,12 @@ Global
 		{4EE48FCF-EBAA-4FC3-9EB4-E0A8EF0CD1AE} = {3DAB01E7-027E-4DD8-90D7-122C56E797E8}
 		{CC368D7A-0975-46F1-B5FC-6A4FA1763B5E} = {6EE9DD10-80DE-4565-A9B4-31B81E4BB5FA}
 		{B8C108C0-A2FA-48DF-B0C2-6CDEF463F8A8} = {D74325E2-B04E-4873-9888-E5C7EBF112D7}
+		{0B45AB17-01EB-4124-9E24-4C2B05BE5EB3} = {4A94D29F-4E54-4267-BD9A-D286A6AC609E}
+		{71E88DCC-8833-4952-8BF9-511B632AB49A} = {4A94D29F-4E54-4267-BD9A-D286A6AC609E}
+		{59B7AB0A-EE93-4F2D-9187-D852418DF015} = {71E88DCC-8833-4952-8BF9-511B632AB49A}
+		{196EE956-0380-45BB-80B2-90F869B4FFAB} = {71E88DCC-8833-4952-8BF9-511B632AB49A}
+		{3756775B-C32E-42B3-9EC7-17511D6E7B89} = {59B7AB0A-EE93-4F2D-9187-D852418DF015}
+		{20D1A197-790A-447B-BE03-46989AE028BB} = {59B7AB0A-EE93-4F2D-9187-D852418DF015}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8E31ACE7-7490-4AF5-AD64-65CF0E737163}
