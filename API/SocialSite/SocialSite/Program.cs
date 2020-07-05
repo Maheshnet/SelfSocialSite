@@ -9,6 +9,10 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using SDATA;
+using Sentry;
+using Sentry.Protocol;
+using Serilog.Events;
+using SUtilities;
 
 namespace SocialSite
 {
@@ -20,7 +24,7 @@ namespace SocialSite
             //CreateHostBuilder(args).Build().Run();
             using (var scope = host.Services.CreateScope())
             {
-                var services = scope.ServiceProvider ;
+                var services = scope.ServiceProvider;
                 try
                 {
                     var context = services.GetRequiredService<DataContext>();
@@ -30,11 +34,15 @@ namespace SocialSite
                 catch (Exception ex)
                 {
                     var Logger = services.GetRequiredService<ILogger<Program>>();
-                    Logger.LogError(ex, "An error occured during Migration");
-                }
+                    Logger.LogError(ex, "Error!!! An error occured during Migration- Please Look into DB Contexts` ");
+                    SentryLogger.LogtoSentry("Test event for Information", LogEventLevel.Error, ex);
 
+
+
+
+                }
+                host.Run();
             }
-            host.Run();
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
@@ -42,7 +50,8 @@ namespace SocialSite
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     // Add the following line:
-                    webBuilder.UseSentry("https://ad4d74fd87084314aea4cca7262c01fc@o407788.ingest.sentry.io/5278731");
+                    //  webBuilder.UseSentry("https://ad4d74fd87084314aea4cca7262c01fc@o407788.ingest.sentry.io/5278731");
+                    webBuilder.UseSentry();
                     //webBuilder.UseSetting("https_port", "44303");
                     webBuilder.UseStartup<Startup>();                   
                 });

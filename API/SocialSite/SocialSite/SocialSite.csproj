@@ -23,11 +23,17 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Sentry" Version="2.1.3" />
     <PackageReference Include="Sentry.AspNetCore" Version="2.1.3" />
+    <PackageReference Include="Sentry.Extensions.Logging" Version="2.1.3" />
+    <PackageReference Include="Sentry.Protocol" Version="2.1.3" />
+    <PackageReference Include="Sentry.Serilog" Version="2.1.3" />
+    <PackageReference Include="SentryDotNet.AspNetCore" Version="1.4.4" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\ClassLiabraries\Data\SDATA\SDATA.csproj" />
+    <ProjectReference Include="..\..\..\ClassLiabraries\Utilities\SUtilities\SUtilities.csproj" />
   </ItemGroup>
 
 

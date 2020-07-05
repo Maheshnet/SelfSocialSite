@@ -9,7 +9,7 @@ import ErrorBoundary from './Components/ErrorBoundaries/ErrorBoundary';
 initSentry();
 ReactDOM.render(
   //  <React.StrictMode>
-  //   <App />
+  //  <App />
   // </React.StrictMode>,
    <ErrorBoundary render = {()=> <span>Error!! Logging out</span>}  ><App /></ErrorBoundary>,
   document.getElementById('root')

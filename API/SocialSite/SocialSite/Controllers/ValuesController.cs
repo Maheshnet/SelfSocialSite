@@ -6,6 +6,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SDATA;
 using SDomain;
+using Serilog;
+using Serilog.Events;
+using SUtilities;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -28,9 +31,11 @@ namespace SocialSite.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Value>>> Get()
         {
+          SentryLogger.LogtoSentry("Get Requested", LogEventLevel.Information);
             var Values = await _context.Values.ToListAsync();
-            return Ok(Values);
+                      return Ok(Values);
         }
+
 
         // GET api/<ValuesController>/5
         [HttpGet("{id}")]

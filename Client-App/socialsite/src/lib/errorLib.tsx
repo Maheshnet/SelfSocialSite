@@ -7,7 +7,7 @@ export function initSentry() {
     return;
   }
 
-  Sentry.init({ dsn: "https://b3ea36055dcf4b79bc7ee046fd224ec5@o407788.ingest.sentry.io/5277439" });
+  Sentry.init({ dsn: "https://4c27ba646ec846e0ab5758d7fa0fe043@o407788.ingest.sentry.io/5277455" });
 }
 
 export function logError(error: any, errorInfo ?:null) {
@@ -18,6 +18,6 @@ export function logError(error: any, errorInfo ?:null) {
   Sentry.withScope((scope) => {
     errorInfo && scope.setExtras(errorInfo);
     Sentry.captureException(error);
-    throw new Error("Extended Test Error 23");
+    //throw new Error("Extended Test Error 23");
   });
 }

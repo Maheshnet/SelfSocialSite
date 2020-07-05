@@ -12,17 +12,19 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using SDATA;
+using SUtilities;
 
 namespace SocialSite
 {
     public class Startup
     {
+        public IConfiguration Configuration { get; }
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
         }
 
-        public IConfiguration Configuration { get; }
+       
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
@@ -32,7 +34,15 @@ namespace SocialSite
                //opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
                 opt.UseSqlite("Data Source=SActivities.db");
             });
+            services.AddCors(opt =>
+            {
+                opt.AddPolicy("Corspolicy", policy => 
+                {
+                policy.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin();//.WithOrigins("http://localhost:3000/");
+                });
+            });
             services.AddControllers();
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -48,6 +58,7 @@ namespace SocialSite
             app.UseRouting();
 
             app.UseAuthorization();
+            app.UseCors("Corspolicy");
 
             app.UseEndpoints(endpoints =>
             {

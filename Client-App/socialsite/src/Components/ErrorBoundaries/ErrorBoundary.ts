@@ -27,7 +27,7 @@ class ErrorBoundary extends Component {
 
   componentDidCatch(error: any, errorInfo: { [key: string]: any; }) {
     Sentry.withScope((scope) => {
-      scope.setExtras(errorInfo);
+      errorInfo && scope.setExtras(errorInfo);
       const eventId = Sentry.captureException(error);
       //this.setState({ eventId });
       this.setState({ error: eventId, info: errorInfo, hasError: true });
@@ -37,6 +37,7 @@ class ErrorBoundary extends Component {
   render() {
     // const error = this.state.error
     if (this.state.hasError) {
+      
       //render fallback UI
       return (TestErrorPage);
     }
